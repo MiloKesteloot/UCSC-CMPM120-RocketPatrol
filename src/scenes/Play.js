@@ -56,6 +56,7 @@ class Play extends Phaser.Scene {
 	}
 
 	update() {
+
 		if(this.gameOver && Phaser.Input.Keyboard.JustDown(keyRESET)) {
 			this.scene.restart()
 		}
@@ -71,18 +72,18 @@ class Play extends Phaser.Scene {
 
 		if(this.checkCollision(this.p1Rocket, this.ship03)) {
 			this.p1Rocket.reset();
-			this.ship03.reset();
 			this.shipExplode(this.ship03);
+			this.ship03.reset();
 		}
 		if (this.checkCollision(this.p1Rocket, this.ship02)) {
 			this.p1Rocket.reset();
-			this.ship02.reset();
 			this.shipExplode(this.ship02);
+			this.ship02.reset();
 		}
 		if (this.checkCollision(this.p1Rocket, this.ship01)) {
 			this.p1Rocket.reset();
-			this.ship01.reset();
 			this.shipExplode(this.ship01);
+			this.ship01.reset();
 		}
 
 		if (this.gameOver && Phaser.Input.Keyboard.JustDown(keyLEFT)) {
@@ -101,6 +102,7 @@ class Play extends Phaser.Scene {
 			return false
 		}
 	}
+
 	shipExplode(ship) {
 		// temporarily hide ship
 		ship.alpha = 0;
@@ -111,6 +113,7 @@ class Play extends Phaser.Scene {
 			ship.reset()                         // reset ship position
 			ship.alpha = 1                       // make ship visible again
 			boom.destroy()                       // remove explosion sprite
+			console.log("hi!");
 		});
 
 		this.p1Score += ship.points;

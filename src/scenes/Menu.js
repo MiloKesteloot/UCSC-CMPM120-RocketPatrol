@@ -13,7 +13,7 @@ class Menu extends Phaser.Scene {
 			frameHeight: 32,
 			startFrame: 0,
 			endFrame: 9
-		});
+		})
 		this.load.audio('sfx-select', './assets/sfx-select.wav')
 		this.load.audio('sfx-explosion', './assets/sfx-explosion.wav')
 		this.load.audio('sfx-shot', './assets/sfx-shot.wav')
@@ -24,7 +24,7 @@ class Menu extends Phaser.Scene {
 			key: 'explode',
 			frames: this.anims.generateFrameNumbers('explosion', { start: 0, end: 9, first: 0}),
 			frameRate: 30
-		});
+		})
 
 		let menuConfig = {
 			fontFamily: "Courier",
